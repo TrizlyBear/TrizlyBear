@@ -12,7 +12,7 @@ import (
 func Bin(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
-		http.ServeFile(w, r, "./public/bin/bin.html")
+		http.ServeFile(w, r, "./public/bin/static/index.html")
 	case "POST":
 		fmt.Println("IDK")
 		keys := []string{"test123"}
@@ -32,8 +32,10 @@ func Bin(w http.ResponseWriter, r *http.Request) {
 		} else {
 			err = ioutil.WriteFile("./public/bin/static/"+p.Name+"."+p.Code, []byte(p.Value), 0644)
 			if err != nil {
-				panic(err)
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
 			}
+			fmt.Fprint(w, p.Name+"."+p.Code)
 		}
 	}
 
@@ -59,7 +61,8 @@ func (fs FileSystem) Open(path string) (http.File, error) {
 
 	s, err := f.Stat()
 	if s.IsDir() {
-		index := ".." + strings.TrimSuffix(path, "/") + "/index.html"
+		index := "./." + strings.TrimSuffix(path, "/") + "/index.html"
+		fmt.Println(index)
 		if _, err := fs.FS.Open(index); err != nil {
 			return nil, err
 		}

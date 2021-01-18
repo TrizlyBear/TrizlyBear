@@ -16,8 +16,8 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", index)
 
-	//fs := http.FileServer(routes.FileSystem{http.Dir("./public/bin/static")})
-	//r.PathPrefix("/bin/").Handler(http.StripPrefix("/bin/", fs))
+	fs := http.FileServer(routes.FileSystem{http.Dir("./public/bin/static")})
+	r.PathPrefix("/bin/").Handler(http.StripPrefix("/bin/", fs))
 	r.HandleFunc("/bin", routes.Bin)
 	http.Handle("/", r)
 	http.ListenAndServe(PORT, nil)

@@ -116,7 +116,7 @@
         var code = document.getElementById("code").value
         var key = document.getElementById("key").value
         var value = document.getElementById("value").value
-        axios.post("/", {
+        axios.post("bin", {
             "key":key,
             "name":name,
             "code":code,
@@ -127,7 +127,7 @@
             error.classList.remove("inactive")
         }).then(res => {
             try {
-                window.location.assign("https://bin.trizlybear.me/" + res.data)
+                window.location.assign(window.location+"/" + res.data)
             } catch(e){
                 console.log(e)
             }
