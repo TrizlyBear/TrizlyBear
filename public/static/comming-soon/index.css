@@ -1,0 +1,27 @@
+html {
+    scroll-behavious: smooth;
+    background-color: #fbfbfb;
+}
+
+@font-face{
+    font-family:"Main";
+    src: url("https://fonts.gstatic.com/s/googlesans/v16/4UabrENHsxJlGDuGo1OIlLU94YtzCwZsPF4o.woff2");
+}
+
+.main{
+    font-family: Main;
+    font-size: 10vw;
+    font-weight:bold;
+
+}
+
+body{
+    padding:0;
+    margin:0;
+    text-align: center;
+    width: 98% !important;
+    height: 100vh !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

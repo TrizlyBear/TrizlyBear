@@ -12,7 +12,7 @@ import (
 func Bin(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
-		http.ServeFile(w, r, "./public/bin/static/index.html")
+		http.ServeFile(w, r, "./public/bin/static/comming-soon.html")
 	case "POST":
 		fmt.Println("IDK")
 		keys := []string{"test123"}
@@ -48,12 +48,12 @@ type binfile struct {
 	Value string
 }
 
-type FileSystem struct {
+type FileSystemBin struct {
 	FS http.FileSystem
 }
 
 // Open opens file
-func (fs FileSystem) Open(path string) (http.File, error) {
+func (fs FileSystemBin) Open(path string) (http.File, error) {
 	f, err := fs.FS.Open(path)
 	if err != nil {
 		return nil, err
@@ -61,7 +61,7 @@ func (fs FileSystem) Open(path string) (http.File, error) {
 
 	s, err := f.Stat()
 	if s.IsDir() {
-		index := "./." + strings.TrimSuffix(path, "/") + "/index.html"
+		index := "./." + strings.TrimSuffix(path, "/") + "/comming-soon.html"
 		fmt.Println(index)
 		if _, err := fs.FS.Open(index); err != nil {
 			return nil, err
