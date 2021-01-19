@@ -14,6 +14,17 @@ html {
     font-weight:bold;
 
 }
+.main:hover{
+    visibility: hidden;
+}
+.main:hover:after{
+    content: "Cumming soon";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    width: 98% !important;
+    text-align: center;
+}
 
 body{
     padding:0;
