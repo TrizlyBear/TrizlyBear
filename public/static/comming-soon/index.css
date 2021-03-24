@@ -9,30 +9,42 @@ html {
 }
 
 .main{
-    font-family: Main;
     font-size: 10vw;
-    font-weight:bold;
-
-}
-.main:hover{
-    visibility: hidden;
-}
-.main:hover:after{
-    content: "Cumming soon";
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    width: 98% !important;
-    text-align: center;
-}
-
-body{
     padding:0;
     margin:0;
     text-align: center;
     width: 98% !important;
-    height: 100vh !important;
+    height: 85vh !important;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+body{
+    font-family: Main;
+    font-weight:bold;
+    height: 98vh;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+.mailc{
+    justify-content: end;
+    position: absolute;
+    z-index: 99;
+    bottom: 10px;
+    font-size: 3vh;
+}
+a {
+    transition: 200ms ease-in;
+}
+a:link, a:visited, a:active {
+    color: black;opacity: 60%;
+}
+a:hover {
+    animation: 300ms ease-in;
+    opacity: 85% !important;
 }
