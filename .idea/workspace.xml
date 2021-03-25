@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61283148-ecdd-4f9d-82c5-9951e0a828d0" name="Default Changelist" comment="Finished bin" />
+    <list default="true" id="61283148-ecdd-4f9d-82c5-9951e0a828d0" name="Default Changelist" comment="Finished bin">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/TrizlyBear.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/comming-soon/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/comming-soon/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/index.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/static.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/trizlybear.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/trizlybear.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/bin.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/bin.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,7 +60,7 @@
   </component>
   <component name="RunManager">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="trizlybear" />
+      <module name="TrizlyBear" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/main.go" />

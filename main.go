@@ -14,10 +14,12 @@ const (
 func main() {
 	fmt.Println("Running on port %v", PORT)
 	r := mux.NewRouter()
-	r.HandleFunc("/", index)
+	r.HandleFunc("/", routes.Index)
 
-	fs := http.FileServer(routes.FileSystem{http.Dir("./public/bin/static")})
-	r.PathPrefix("/bin/").Handler(http.StripPrefix("/bin/", fs))
+	binfs := http.FileServer(routes.FileSystemBin{http.Dir("./public/bin/static")})
+	fs := http.FileServer(routes.FileSystem{http.Dir("./public/static")})
+	r.PathPrefix("/bin/").Handler(http.StripPrefix("/bin/", binfs))
+	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
 	r.HandleFunc("/bin", routes.Bin)
 	http.Handle("/", r)
 	http.ListenAndServe(PORT, nil)

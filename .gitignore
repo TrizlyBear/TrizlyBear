@@ -109,3 +109,5 @@ keys.json
 #Bin static
 public/bin/static/
 !public/bin/stati/index.html
+
+.idea/
