@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tristan Schmidt</title>
+    <style>
+        @font-face{
+            font-family:"Main";
+            src: url("https://fonts.gstatic.com/s/googlesans/v16/4UabrENHsxJlGDuGo1OIlLU94YtzCwZsPF4o.woff2");
+        }
+
+        /* Default */
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Centering */
+        body {
+            scroll-behavior: smooth;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Main;
+            background: #ffffff;
+            height: 100vh;
+            max-height: 100vh;
+            transition: all 1s ease-in-out;
+        }
+
+        .show {
+            min-height: 100vh;
+            height: auto;
+            max-height: 500vh;
+            transition: all 1s ease-in-out;
+        }
+
+        .column{
+            flex-direction: row;
+            display: inline;
+        }
+
+        /* Link styling */
+        ul {
+            margin-left: 0;
+            padding-left: 1em;
+        }
+
+        a:visited, a:link {
+            color: black;
+        }
+
+        .main{
+            max-height: 500vh;
+        }
+
+        /* Transition magic */
+        #back {
+            display: inline;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        .menu {
+            max-height: 20vh;
+            background: white;
+            transition: all 1s ease-in-out;
+        }
+
+        .mainwidth .menu {
+            max-height: 0px !important;
+            overflow: hidden;
+        }
+
+        .portfolio {
+            max-width: 90vw;
+            max-height: 0px;
+            overflow: hidden;
+            transition: all 1s cubic-bezier(0, 0.89, 1, 1);
+        }
+
+        .mainwidth .portfolio {
+            display: block;
+            max-width: 90vw;
+            max-height: 300vh;
+        }
+
+        .mainwidth div #back {
+            display: inline;
+            opacity: 1.0;
+        }
+
+        .title {
+            position: sticky;
+            top: 0;
+            display: block;
+            background: white;
+            margin-top: 20px;
+            padding: 5px 0px;
+            transition: 1s ease-in;
+        }
+
+        /* Portfolio */
+        .portfolio div h3 {
+            display: inline;
+            margin-bottom: 0;
+            max-width: 100vw;
+        }
+
+        .portfolio div h4 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .portfolio ul {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .portfolio ul li {
+            font-family: "Helvetica Neue";
+            font-weight: normal;
+        }
+
+        .date {
+            float: right;
+            margin-top: 0;
+            margin-left: 5vw;
+            font-weight: normal;
+            text-align: right;
+            color: rgb(146, 146, 146);
+        }
+
+        #experience {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="title">
+            <h1 style="font-weight: bold; margin-bottom: 5px; display: inline">Tristan Schmidt</h1>
+            <h2 style="float: right;" id="back">Back</h2>
+            <h2 style="font-weight: bold; color: rgb(146, 146, 146); margin-top: 0; display: block">Software Developer</h2>
+        </div>
+
+
+        <div style="display: flex;" class="menu">
+            <div class="column" style="padding-right: 5vw">
+                <h3>Portfolio</h3>
+                <ul>
+                    <li><a onclick="move('experience')" href="#experience">Experience</a></li>
+                    <li><a onclick="move('projects')" href="#projects">Projects</a></li>
+                    <li><a onclick="move('other')" href="#other">Other</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Connect with me!</h3>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/tristansch/">LinkedIn</a></li>
+                    <li><a href="resume.pdf">Resume / CV</a></li>
+                    <li><a href="https://github.com/TrizlyBear">Github</a></li>
+                    <li><a href="mailto:tristanschmidt2004@gmail.com">Mail</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="portfolio">
+            <h2 id="experience">Experience</h2>
+            <div>
+                <h3>FM Base</h3><h3 class="date">December 2019 - March 2020</h3>
+                <h4>Frontend Developer</h4>
+                <ul>
+                    <li>Created a website page for users to find and filter tactics for the videogame Football Manager.</li>
+                    <li>Replaced a paid software with the new page and tripled the traffic for that page to over a million monthly views.</li>
+                </ul>
+            </div>
+            <h2 id="projects">Projects</h2>
+            <div>
+                <h3>Food Ordering Service</h3><h3 class="date">November - January 2024</h3>
+                <h4>Group Project - Grade 9.4</h4>
+                <ul>
+                    <li>Developed a food ordering microservice in a group of 5 for a university course.</li>
+                    <li>Used the Spring framework and OpenAPI to build the software, with help of requirement engineering and the scrum framework to guide our teamwork.</li>
+                </ul>
+
+                <h3>Discord Bot</h3><h3 class="date">December 2018 - December 2023</h3>
+                <h4>Solo Developer</h4>
+                <ul>
+                    <li>Developed a chat bot capable of serving a million requests invoked by thousands of people.</li>
+                    <li>Maintaining the bot for 4+ years as well as operating the backend, database and server it is running on.</li>
+                    <li>Rewriting the bot in the Go programming language to make it 20x as efficient, as well as containerising it using docker, and setting up CI/CD for automatic deployment.</li>
+                </ul>
+
+                <h3><a href="https://github.com/TrizlyBear/PWS">Machine Learning Framework</a></h3><h3 class="date">May - December 2021</h3>
+                <h4>Main Developer</h4>
+                <ul>
+                    <li>Created and trained a Machine Learning application to classify brain tumors.</li>
+                    <li>Programmed a custom Machine Learning framework in Golang from the ground up that implements a convolutional neural network.</li>
+                </ul>
+
+                <h3><a href="https://github.com/discless/discless">Discless (Serverless Discord Bots)</a></h3><h3 class="date">August - September 2021</h3>
+                <h4>Solo Developer</h4>
+                <ul>
+                    <li>Experimented with making a serverless framework.</li>
+                    <li>Created a library in Golang to create Discord bots in a serverless / FaaS (Function-as-a-Service) way.</li>
+                </ul>
+
+                <h3><a href="https://github.com/TrizlyBear/thulium">In Progress: Thulium</a></h3>
+                <ul>
+                    <li>I am creating a framework for even easier back-end application building in golang.</li>
+                    <li>The library utilises WASM and other packages to cross compile front-end applications for any platform.</li>
+                </ul>
+            </div>
+            <h2 id="other">Other</h2>
+            <div>
+                <h3 onclick="window.open('https://mod.io/g/skaterxl/m/xlexit');window.open('https://mod.io/g/skaterxl/m/xlnames')">SkaterXL Mods</h3><h3 class="date">December 2020</h3>
+                <h4>Game Mod Developer</h4>
+                <ul>
+                    <li>I created two mods for the skateboarding game Skater XL, which got a total of over <b>3000+</b> downloads.</li>
+                    <li>The mod allowed players to name their own tricks and overwrite existing trick names with the correct name.</li>
+                    <li>The second mod was a quality of life mod which became redundant after the game developers added the mod to the actual game.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        if (window.location.hash == "#projects" || window.location.hash == "#experience" || window.location.hash == "#other") {
+            move("")
+        }
+        function move(id) {
+            document.getElementsByClassName("main")[0].classList.add("mainwidth")
+            document.body.classList.add("show")
+        }
+
+        window.addEventListener("hashchange", (event) => {
+            if (window.location.hash == "#projects" || window.location.hash == "#experience" || window.location.hash == "#other") {
+                move("")
+            } else {
+                document.body.classList.remove("show")
+                document.getElementsByClassName("main")[0].classList.remove("mainwidth")
+            }
+        })
+        var main = document.getElementsByClassName("main")[0]
+        var back = document.getElementById("back")
+        back.addEventListener('click', () => {
+            if (main.classList.contains("mainwidth")) {
+                window.location.hash = null
+            }
+        })
+    </script>
+</body>
+</html>
